@@ -2,6 +2,7 @@ service: get-comic-strips
 
 provider:
   name: aws
+  region: ap-southeast-2
   runtime: nodejs12.x
 
 functions:
@@ -11,6 +12,7 @@ functions:
       - http:
           path: /comics
           method: get
+          cors: true
 
 plugins:
   - serverless-plugin-typescript
