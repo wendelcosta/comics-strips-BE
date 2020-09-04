@@ -1,48 +1,21 @@
-<!--
-title: 'AWS Simple HTTP Endpoint example in NodeJS with Typescript'
-description: 'This template demonstrates how to make a simple REST API with Node.js and Typescript running on AWS Lambda and API Gateway using the Serverless Framework v1.'
-layout: Doc
-framework: v1
-platform: AWS
-language: nodeJS
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+# Comics POC BE
 
-# Serverless Framework Node with Typescript REST API on AWS
+This POC runs locally together with the FE implementaion or can be accessed on:
 
-This template demonstrates how to make a simple REST API with Node.js and Typescript running on AWS Lambda and API Gateway using the Serverless Framework v1.
+- Endpoint: <https://rwu38fvxlh.execute-api.ap-southeast-2.amazonaws.com/dev/comics/>
 
-This template does not include any kind of persistence (database). For a more advanced example check out the [aws-node-rest-api-typescript example](https://github.com/serverless/examples/tree/master/aws-node-rest-api-typescript) which has must RESTful resources and persistence using MongoDB.
+## Running localy
 
-## Setup
+To run this POC localy follow the next steps:
 
-Run this command to initialize a new project in a new working directory.
+1. Run `npm install -g serverless`
+2. Run `sls offline` to run it locally and access from the browser
+3. Run `sls invoke -f comics` to run it on the terminal
 
-`sls init aws-node-rest-api-typescript`
+Obs: Note that to test the end to end flow the Front End needs to be initialised after, you can find more info in it's repo (<https://github.com/wendelcosta/comics-strips-FE>)
 
-## Usage
+## Running tests
 
-**Deploy**
+To run tests:
 
-This example is made to work with the Serverless Framework dashboard which includes advanced features like CI/CD, monitoring, metrics, etc.
-
-```
-$ serverless login
-$ serverless deploy
-```
-
-To deploy without the dashboard you will need to remove `org` and `app` fields from the `serverless.yml`, and you won’t have to run `sls login` before deploying.
-
-**Invoke the function locally.**
-
-```
-serverless invoke local --function hello
-```
-
-**Invoke the function**
-
-```
-curl https://xxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/
-```
+1. Run `sls invoke test -f comics`
